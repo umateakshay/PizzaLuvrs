@@ -1,9 +1,9 @@
 node {
     checkout scm
 
-    docker.withRegistry('https://hub.docker.com/repository/docker/umateakshay/test', 'credentials-id') {
+    docker.withRegistry('https://hub.docker.com/', 'DockerHub') {
 
-        def customImage = docker.build("my-image:${env.BUILD_ID}")
+        def customImage = docker.build("PizzaLuvrs:${env.BUILD_ID}")
 
         /* Push the container to the custom Registry */
         customImage.push()
