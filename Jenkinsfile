@@ -1,11 +1,11 @@
-// Powered by Infostretch 
+node {
+    checkout scm
 
-timestamps {
+    docker.withRegistry('https://hub.docker.com/repository/docker/umateakshay/test', 'credentials-id') {
 
-node () {
+        def customImage = docker.build("my-image:${env.BUILD_ID}")
 
-	stage ('GITUAT - Checkout') {
- 	 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub', url: 'https://github.com/umateakshay/PizzaLuvrs.git']]]) 
-	}
-}
+        /* Push the container to the custom Registry */
+        customImage.push()
+    }
 }
