@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo "starting pizza-luvrs"
-cd /home/ec2-user/pizza-luvrs
+cd ~/devops/PizzaLuvr/PizzaLuvrs/pizza-luvrs
 npm start
