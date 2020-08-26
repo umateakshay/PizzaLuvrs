@@ -6,9 +6,9 @@
 
 FROM ubuntu:latest
 USER root
-WORKDIR /home/PizzaWeb
+WORKDIR ./home/PizzaWeb
 RUN pwd
-COPY ./package.json /home/PizzaWeb/package.json
+COPY * ./home/PizzaWeb/
 RUN apt-get update
 RUN apt-get -y install curl gnupg
 RUN curl -sL https://deb.nodesource.com/setup_11.x  | bash -
