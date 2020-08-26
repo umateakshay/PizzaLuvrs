@@ -1,7 +1,7 @@
 node {
     checkout scm
 
-    docker.withRegistry('https://hub.docker.com/repository/docker/umateakshay', 'DockerHub') {
+    docker.withRegistry('', 'DockerHub') {
 
         def customImage = docker.build("PizzaLuvrs:${env.BUILD_ID}")
 
