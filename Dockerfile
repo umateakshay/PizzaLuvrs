@@ -7,6 +7,7 @@
 FROM ubuntu:latest
 USER root
 WORKDIR /home/PizzaWeb
+RUN pwd
 COPY ./package.json /home/PizzaWeb/package.json
 RUN apt-get update
 RUN apt-get -y install curl gnupg
